@@ -40,5 +40,5 @@ script:
      - cmake ..
      - cmake --build . --target all
      - cmake --build . --target test-all
-     - cd test-all
+     - cd test
      - ctest
