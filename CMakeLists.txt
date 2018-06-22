@@ -16,3 +16,7 @@ add_subdirectory(test)
 
 configure_file(cmake/data-structures-cpp.pc.in ${CMAKE_BINARY_DIR}/data-structures-cpp.pc @ONLY)
 install(FILES ${CMAKE_BINARY_DIR}/data-structures-cpp.pc DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)
+install(
+    DIRECTORY ${CMAKE_SOURCE_DIR}/include/data-structures-cpp
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    FILES_MATCHING PATTERN "*.h*")

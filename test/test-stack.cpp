@@ -1,12 +1,13 @@
 #include "gtest/gtest.h"
-#include "fraction.h"
+#include "stack.h"
 
 using namespace std;
 
-TEST(testFraction, testNumerator)
+TEST(testStack, testBack)
 {
-    fraction one("1/1");
-    EXPECT_EQ(1, one.getNumerator());
+    stack<int> s;
+    s.push(1);
+    EXPECT_EQ(1, s.back());
 }
 
 GTEST_API_ int main(int argc, char **argv) {

@@ -1,12 +1,13 @@
 #include "gtest/gtest.h"
-#include "fraction.h"
+#include "dlist.h"
 
 using namespace std;
 
-TEST(testFraction, testNumerator)
+TEST(testDlist, testFront)
 {
-    fraction one("1/1");
-    EXPECT_EQ(1, one.getNumerator());
+    dlist<int> s;
+    s.insert_front(1);
+    EXPECT_EQ(1, s.show_front());
 }
 
 GTEST_API_ int main(int argc, char **argv) {

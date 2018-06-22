@@ -42,6 +42,8 @@ script:
      - cd build
      - cmake ..
      - cmake --build . --target all
-     - cmake --build . --target test-fraction
-     - cd test
+    #  - cmake --build . --target test-fraction
+    #  - cmake --build . --target test-complex
+    #  - cmake --build . --target test-stack
+    #  - cmake --build . --target test-dlist
      - ctest
