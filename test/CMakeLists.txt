@@ -27,4 +27,4 @@ target_link_libraries(test-all fraction gtest Threads::Threads)
 add_dependencies(test-all googletest)
 set_target_properties(test-all PROPERTIES EXCLUDE_FROM_ALL TRUE)
 
-add_test(test-all test-all)
+add_test(testFraction test-all)
