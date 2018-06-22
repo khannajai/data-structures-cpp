@@ -3,10 +3,10 @@
 
 using namespace std;
 
-TEST(fractionTest, testNumerator)
+TEST(testFraction, testNumerator)
 {
-    //fraction one("1/1");
-    EXPECT_EQ(1,1);
+    fraction one("1/1");
+    EXPECT_EQ(1, one.getNumerator());
 }
 
 GTEST_API_ int main(int argc, char **argv) {

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5.1)
 project(data-structures-cpp DESCRIPTION "elementary data structures" VERSION 1.0.1)
 
+enable_testing()
+
 #compiler
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
