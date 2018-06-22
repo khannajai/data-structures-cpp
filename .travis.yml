@@ -56,7 +56,7 @@ script:
     # Build main and tests
     ############################################################################
      - mkdir -p build
-     - cd mkdir
+     - cd build
      - cmake ..
      - cmake --build . --target all
      - cmake --build . --target test
