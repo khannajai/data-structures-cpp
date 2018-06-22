@@ -31,6 +31,9 @@ matrix:
            - ubuntu-toolchain-r-test
            - llvm-toolchain-precise-3.7
 
+install:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 
+
 script:
     ############################################################################
     # Build main and tests
