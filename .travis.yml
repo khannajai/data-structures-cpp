@@ -39,6 +39,6 @@ script:
      - cd build
      - cmake ..
      - cmake --build . --target all
-     - cmake --build . --target test-all
+     - cmake --build . --target test-fraction
      - cd test
      - ctest
