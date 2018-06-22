@@ -1,2 +1,2 @@
-# data-structures-cpp
-Some elementary templated data structures in C++
+# Data Structures in C++
+Some elementary data structures in C++
