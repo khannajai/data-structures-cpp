@@ -3,7 +3,7 @@
 # Data Structures in C++
 Some elementary data structures in C++. This project also serves as an example for a simple C++ project that uses CMake for building and installing, gtest and CTest for testing, Doxygen for documentation, Travis for CI and build status, pkg-config for packaging. 
 
-## How to build and install:
+## How to build, install, and uninstall:
 1. Clone respository, enter it, and then create build directory.
 ```
 git clone https://github.com/khannajai/data-structures-cpp.git
@@ -23,6 +23,11 @@ cmake --build . --target all
 sudo make install
 ```
 By default, on linux systems, this will install the include directory in ```/usr/local/include/``` and the shared libraries in ```/usr/local/lib/```. It will also install a pkgconfig file in ```usr/local/share/pkgconfig/```, which makes it easy for the user to use the library in other projects.
+
+4. Uninstall shared libraries, docs and headers
+```
+sudo cmake --build . --target uninstall
+```
 
 ## How to use library in other projects
 Once the user has installed the headers, the shared libraries, and the pkgconfig file, the user can now include the headers in their source code and link the shared libraries in other projects. 

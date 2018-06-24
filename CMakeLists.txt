@@ -10,6 +10,7 @@ include(GNUInstallDirs)
 
 #including directories for headers and libraries
 set(PROJECT_INCLUDE ${CMAKE_SOURCE_DIR}/include/data-structures-cpp)
+set(PROJECT_LIB ${CMAKE_SOURCE_DIR}/lib)
 set(EXTERNAL_INCLUDE ${CMAKE_BINARY_DIR}/external/${CMAKE_INSTALL_INCLUDEDIR})
 set(EXTERNAL_LIB ${CMAKE_BINARY_DIR}/external/${CMAKE_INSTALL_LIBDIR})
 include_directories(${PROJECT_INCLUDE})
@@ -28,6 +29,22 @@ install(
     DIRECTORY ${CMAKE_SOURCE_DIR}/include/data-structures-cpp
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
     FILES_MATCHING PATTERN "*.h*")
+
+# uninstall target
+if(NOT TARGET uninstall)
+configure_file(
+    "${CMAKE_SOURCE_DIR}/cmake/uninstall.cmake.in"
+    "${CMAKE_BINARY_DIR}/uninstall.cmake"
+    IMMEDIATE @ONLY)
+
+add_custom_target(uninstall
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_BINARY_DIR}/uninstall.cmake)
+set_target_properties(uninstall PROPERTIES EXCLUDE_FROM_ALL TRUE)
+endif()
+
+
+
+
 
 enable_testing()
 
