@@ -14,15 +14,15 @@ cd build
 
 2. Build the shared libraries, docs and test executables
 ```
-cmake ..
-cmake --build . --target all
+cmake .. 
+cmake --build . 
 ```
 
 3. Install shared libraries, docs and headers
 ```
-sudo make install
+sudo cmake --build . --target install
 ```
-By default, on linux systems, this will install the include directory in ```/usr/local/include/``` and the shared libraries in ```/usr/local/lib/```. It will also install a pkgconfig file in ```usr/local/share/pkgconfig/```, which makes it easy for the user to use the library in other projects.
+By default, on linux systems, this will install the include directory in ```/usr/local/include/``` and the shared libraries in ```/usr/local/lib/```. It will also install a pkgconfig file in ```usr/local/share/pkgconfig/```, which makes it easy for the user to use the library in other projects. To change the installation prefix (default is ```/usr/local```), run the first cmake command along with the option ```-DCMAKE_INSTALL_PREFIX=/my/new/path```.
 
 4. Uninstall shared libraries, docs and headers
 ```
@@ -35,6 +35,6 @@ To see all the linker flags to link the libraries:
 ```
 pkg-config --libs data-structures-cpp
 ```
-To include the headers, the user can do ```#include <data-structures-cpp/name_of_header.h>``` with the correct name of the header they want to use. 
+To include the headers, for example the user can do ```#include <data-structures-cpp/fraction.h>```.
 
 To use the library in a CMake project, the user should search for the pkgconfig module by using pkgconfig in their ```CMakeLists.txt```. See the example here https://github.com/khannajai/use-data-struct

@@ -55,7 +55,7 @@ class dlist
     
     T show_front(void) const;
     T show_back(void) const;
-    T operator[](const int&) const;
+    T& operator[](const int&) const;
 
     template <class U>
     friend std::ostream& operator<<(std::ostream&, const dlist<U>&);
@@ -216,32 +216,35 @@ bool dlist<T>::insert(const T& el, const int& pos)
 }
 
 template <class T>
-T dlist<T>::operator[](const int& pos) const
+T& dlist<T>::operator[](const int& pos) const
 {
     if(pos>=size || pos<0)
     {
         throw invalidIndex();
-        return 0;
-    }
-    dnode<T>* current;
-    if(size-1-pos>pos)
-    {
-        current=start;
-        for(int i=0;i<pos;i++)
-        {
-            current=current->next;
-        }
-        return current->data;
     }
     else
     {
-        current=end;
-        for(int i=0;i<size-1-pos;i++)
+        dnode<T>* current;
+        if(size-1-pos>pos)
         {
-            current=current->previous;
+            current=start;
+            for(int i=0;i<pos;i++)
+            {
+                current=current->next;
+            }
+            return current->data;
         }
-        return current->data;
+        else
+        {
+            current=end;
+            for(int i=0;i<size-1-pos;i++)
+            {
+                current=current->previous;
+            }
+            return current->data;
+        }
     }
+    
 
 }
 
